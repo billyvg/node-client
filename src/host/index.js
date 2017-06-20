@@ -32,7 +32,7 @@ class Host {
       const procInfo = method.split(':');
       const filename = procInfo[0];
       const type = procInfo[1];
-      const procName = `"${procInfo.slice(2).join(' ')}"`;
+      const procName = procInfo.slice(2).join(' ');
 
       const plugin = this.getPlugin(filename);
 

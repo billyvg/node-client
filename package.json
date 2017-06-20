@@ -34,6 +34,7 @@
     "lodash.defaults": "^4.2.0",
     "lodash.omit": "^4.5.0",
     "msgpack5rpc": "^1.1.0",
+    "the-best-winston-sentry": "https://github.com/billyvg/the-best-winston-sentry",
     "traverse": "^0.6.6",
     "winston": "^2.3.1"
   },
