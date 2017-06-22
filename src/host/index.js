@@ -50,8 +50,20 @@ class Host {
           try {
             resolve(await plugin.module[handler](...args));
           } catch (err) {
-            const msg = `Error in plugin for ${type}:${procName}: ${err.message}`;
-            logger.error(`${msg} (file: ${filename}, stack: ${err.stack})`);
+            if (err) {
+              logger.error(err, {
+                filename,
+                method,
+              });
+            } else {
+              const msg = `Error in plugin for ${type}:${procName}`;
+              // eslint-disable-next-line no-ex-assign
+              err = new Error(msg);
+              logger.error(err, {
+                filename,
+                method,
+              });
+            }
             reject(err);
           }
         }
