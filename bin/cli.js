@@ -20,6 +20,8 @@ try {
   logger.error(err);
 }
 
-process.on('unhandledRejection', (reason, p) => {
-  logger.info('Unhandled Rejection at:', p, 'reason:', reason);
+process.on('unhandledRejection', reason => {
+  logger.debug('Unhandled Rejection in Host interface', {
+    reason,
+  });
 });
